@@ -6,7 +6,10 @@
     <div class="articles">
         {% for article in articles%}
         <div class="article">
-
+            <p class="date-info-2">{%for item in article.category.all%}
+                <a href="/articles/category/{{item.name}}/">{{item.name}}</a>,
+                {%endfor%}
+            </p>
             <h2><a href="/articles/{{article.slug}}">{{article.title}}</a></h2>
             <p>{{article.category}}</p>
             <p>{{article.snippet}} <a href="#"></p> 

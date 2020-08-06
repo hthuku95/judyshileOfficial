@@ -1,7 +1,7 @@
 {%extends 'base_layout.htm'%}
 {%block content%}
 <div>
-    <img src="{{article.thumb.url}}" alt="{{article.title}}" height=300px width=100%/>
+    <img src="{{article.thumb.url}}" alt="{{article.title}}" height=300px width=300px/>
     <p>{%for category in article.categorys%}
         <p>{{category.name}}</p>
         {%endfor%}
@@ -13,5 +13,7 @@
     </h1>
     <p>{{article.date}}</p>
     <p>{{article.body}}</p>
+        <source src="{{article.description.url}}" type="video/mp4">
+    </video>
 </div>
 {%endblock%}

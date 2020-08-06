@@ -4,7 +4,8 @@ from .models import Article ,Category
 # Create your views here.
 def article_list(request):
     articles = Article.objects.all().order_by('date')
-    return render(request,'articles/article_list.htm',{'articles':articles})
+    categories = Category.objects.all()
+    return render(request,'articles/article_list.htm',{'articles':articles},{'categories':categories})
 
 
 def article_detail(request,slug):
@@ -13,8 +14,11 @@ def article_detail(request,slug):
     article.save()
     return render(request,'articles/article_detail.htm',{'article':article})
 
-def article_category(request):
-    categorys = Category.objects.all()
-    return render(request,'articles/article_category.htm',{'categorys':categorys})
-    
+
+def article_category(request, slug):
+    articles = Article.objects.filter(category__name = slug)
+    stories = Article.objects.all()
+    categories = Category.objects.all()
+    return render(request,'articles/article_category.htm',{'articles':articles,'categories':categories,'stories':stories})
+
 

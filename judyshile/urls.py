@@ -9,6 +9,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'',views.index),
+    path(r'articles/',include('articles.urls'))
 ]
 
 #appending the static files urls to the above media

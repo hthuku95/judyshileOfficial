@@ -1,0 +1,9 @@
+{%extends 'base_layout.htm'%}
+{%block content%}
+{% for category in categorys%}
+<div class="article">
+    <img src="{{category.thumb.url}}" alt="" height="300px" width="300px">
+    <p>{{category.name}}</p>
+</div>
+{% endfor %}
+{%endblock%}

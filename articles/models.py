@@ -27,5 +27,26 @@ class Article (models.Model):
         return self.title
     
     def snippet(self):
-        return self.body[:50] +
+        return self.section_one[:50] 
+
+#about and contacts
+from django.db import models
+class About (models.Model):
+    body = models.TextField(max_length= 1024)
+    image = models.ImageField()
+
+    def snippet(self):
+        return self.body[:50]
+
+    def __str__(self):
+        return self.body
+
+class Contact (models.Model):
+    firstName = models.CharField(max_length=50)
+    lastname = models.CharField( max_length=50)
+    email = models.EmailField( max_length=254)
+    message = models.TextField()
+    def __str__(self):
+        return self.firstname
+    
 

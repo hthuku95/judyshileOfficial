@@ -10,6 +10,7 @@ def article_list(request):
 
 def article_detail(request,slug):
     article = Article.objects.get(slug=slug)
+    articles = Article.objects.filter(category__name = article.category).order_by('date')
     article.views = article.views + 1
     article.save()
     return render(request,'articles/article_detail.htm',{'article':article})

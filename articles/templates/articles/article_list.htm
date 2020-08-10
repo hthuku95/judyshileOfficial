@@ -32,11 +32,11 @@
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
     </div>
-    <div class="article-page-category">
+    <div class="article-page">
             <ul class=" my-list-story">
                 {%for article in articles%}
                 <li class="my-list-item">
-                    <a href="/articles/{{article.slug}}"><img class="rounded" src="{{article.thumb.url}}" alt="{{article.title}}" height=100% width=100%/></a>
+                    <a href="/articles/{{article.slug}}"><img class="rounded" src="{{article.thumb.url}}" alt="{{article.title}}" height=300px width=300px/></a>
                     <div class="my-story-info">
                         <p class="date-info">{{article.date}}</p>
                         <p class="date-info-2">{%for item in article.category.all%}
@@ -46,7 +46,7 @@
                         <h1><a href="/articles/{{article.slug}}">{{article.title}}</a></h1>
                         <p>{{article.snippet}}</p>
                         <br>
-                        <a href="/articles/{{article.slug}}">READ MORE</a>
+                        <a href="/articles/{{article.slug}}" class="read-more">READ MORE</a>
                     </div>
                 </li>
                 {%endfor%}

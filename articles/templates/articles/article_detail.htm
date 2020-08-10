@@ -1,5 +1,37 @@
 {%extends 'base_layout.htm'%}
 {%block content%}
+<div class="slideshow-container">
+    <!-- Full-width images with number and caption text -->
+    {%for story in articles %}
+    <div class="mySlides fade">
+        <img src="{{story.thumb.url}}" style="width:100%" height="600px">
+        <div class="text">
+        <p class="category" id="category">
+            {%for item in article.category.all%}
+            <a href="/articles/category/{{item.name}}/">{{item.name}}</a>,
+            {%endfor%}
+        </p>
+        <h1 class="article-heading" id="articleHeading">{{story.title}}</h1>
+        <p class="article-body">
+            {{story.snippet}}
+            <a href="/articles/{{article.slug}}">Read More</a>
+        </p>
+        </div>
+    </div>
+    {%endfor%}
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+</div>
 <div>
     <img src="{{article.thumb.url}}" alt="{{article.title}}" height=300px width=300px/>
     <p>{%for category in article.categorys%}

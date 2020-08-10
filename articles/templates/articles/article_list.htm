@@ -1,8 +1,5 @@
 {%extends 'base_layout.htm'%}
     {%block content%}
-    <h1>
-        Articles list
-    </h1>
     <div class="slideshow-container">
             <!-- Full-width images with number and caption text -->
             {%for article in articles %}
@@ -35,7 +32,7 @@
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
     </div>
-    <div class="article-page">
+    <div class="article-page-category">
             <ul class=" my-list-story">
                 {%for article in articles%}
                 <li class="my-list-item">
@@ -51,20 +48,6 @@
                         <br>
                         <a href="/articles/{{article.slug}}">READ MORE</a>
                     </div>
-                </li>
-                {%endfor%}
-            </ul>
-            <ul class="categories">
-                <h1>CATEGORIES</h1>
-                {%for category in categories%}
-                <li class="category-item">
-                    <a href="/articles/category/{{category.name}}/">{{category.name}}</a>
-                </li>
-                {%endfor%}
-                <h1>POSTS</h1>
-                {%for article in articles%}
-                <li class="category-item">
-                    <a href="/articles/{{article.slug}}">{{article.title}}</a>
                 </li>
                 {%endfor%}
             </ul>

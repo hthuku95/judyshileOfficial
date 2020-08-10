@@ -33,25 +33,6 @@
     </div>
 </div>
 <div class="article-page-category">
-    </ul>
-    <ul class="categories">
-        <h1 class=" category-heading"><span>CATEGORIES</span></h1>
-        <div class="category category-container">
-            {%for category in categories%}
-            <li class="category-item">
-                <a href="/articles/category/{{category.name}}/">{{category.name}}</a>
-            </li>
-            {%endfor%}
-        </div>
-        <h1 class="post-heading"><span>POSTS</span></h1>
-        <div class="category posts-container">
-            {%for article in articles%}
-            <li class="category-item">
-                <a href="/articles/{{story.slug}}">{{article.title}}</a>
-            </li>
-            {%endfor%}
-        </div>
-    </ul>
         <ul class=" my-list-story">
             {%for article in articles%}
             <li class="my-list-item">
@@ -63,13 +44,12 @@
                         {%endfor%}
                     </p>
                     <h1><a href="/articles/{{article.slug}}">{{article.title}}</a></h1>
-                    <p>{{article.snippet}}</p>
+                    <p class="article-snippet">{{article.snippet}}</p>
                     <br>
-                    <a href="/articles/{{article.slug}}">READ MORE</a>
+                    <a href="/articles/{{article.slug}}" class="read-more">READ MORE</a>
                 </div>
             </li>
             {%endfor%}
         </ul>
-
     </div>
 {%endblock%}

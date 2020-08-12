@@ -58,8 +58,6 @@ window.onscroll = changePos;
 function changePos() {
     var header = document.getElementById("navTwo");
     var nav = document.getElementById("navbartwo");
-    var categorybar = getElementById("categories");
-
     //position of navbar1
     if (window.pageYOffset > 500) {
         header.style.position = "absolute";
@@ -79,15 +77,6 @@ function changePos() {
   } else {
       nav.style.position = "";
       nav.style.top = "";
-  }
-
-  //psition of categorybar
-  if (Window.pageYOffset >1200) {
-    categorybar.style.position = "absolute";
-    categorybar.style.top = pageYOffset + "px";
-  } else {
-    categorybar.style.position = "";
-    categorybar.style.top ="";
   }
 }
 

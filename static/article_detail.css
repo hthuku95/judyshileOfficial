@@ -1,0 +1,55 @@
+.my-article{
+    width: 70%;
+    margin: auto;
+}
+.my-article > img {
+    height: 620px;
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.my-article > p{
+    line-height: 1.6;
+}
+.my-article > h1{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.my-article  >h3{
+    color: rgb(71, 70, 70);
+    width:200px;
+    border-bottom: solid 2px rgb(224, 95, 9);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+.my-article > .related-stories >p {
+    margin-bottom: 20px;
+}
+.my-article > .related-stories >p > a{
+    margin-bottom: 24px;
+    color: rgb(224, 95, 9);
+}
+.my-article > .related-stories >p > a:hover{
+    color: rgb(71, 70, 70);
+}
+@media screen and (max-width:400px){
+    .my-article > img {
+        height: 300px;
+    }
+  }
+@media screen and (min-width:400px) and (max-width:550px){
+    .my-article > img {
+        height: 300px;
+    }
+  }
+@media screen and (min-width:550px) and (max-width:720px){
+    .my-article > img {
+        height: 400px;
+    }
+}
+@media screen and (min-width:720px) and (max-width:920px){
+    .my-article > img {
+        height: 500px;
+    }
+}

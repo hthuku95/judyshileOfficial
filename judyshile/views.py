@@ -17,13 +17,13 @@ def index(request):
             mail_message = form.cleaned_data['message']
         
             #saving the contacts
-            contact = Contact(firstname=first_name,lastname=last_name,email=email_address,message=mail_message)
+            contact = Contact(firstName=first_name,lastname=last_name,email=email_address,message=mail_message)
             #sending the email
             send_mail(
-                'Hi Judy Im reaching you from leshi blog',
+                ''+first_name+''+last_name+''+email_address+'Hi Judy Im reaching you from leshi blog',
                 mail_message,
                 email_address,
-                ['hthuku95@gmail.com'],
+                ['leshiblog@gmail.com'],
                 fail_silently = False,
             )
             print (first_name,last_name,email_address,mail_message)
